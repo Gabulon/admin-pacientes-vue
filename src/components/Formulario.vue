@@ -1,5 +1,7 @@
 <script setup>
+import {ref} from 'vue'
 
+const nombre =ref('Max')
 </script>
 
 <template>
@@ -23,6 +25,8 @@
                 type="text"
                 placeholder="Nombre de la Mascota"
                 class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                :value="nombre"
+                @input="(e)=> nombre = e.target.value"
             />
              </div>
              <div class="mb-5">
