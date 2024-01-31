@@ -4,7 +4,7 @@ import Alerta from './Alerta.vue'
 
 const alerta = reactive({
     tipo:'',
-    mensaje:
+    mensaje:''
 })
 
 const paciente = reactive({
@@ -32,6 +32,10 @@ const validar= e=>{
             Añade Pacientes y
             <span class="text-indigo-600 font-bold">Administralos</span>
         </p>
+        <Alerta
+        v-if="alerta.mensaje"
+        :alerta="alerta"
+        />
         <form
         class="bg-white shadow-md rounded-lg py-10 px-5 mb-10"
         @submit.prevent="validar"
