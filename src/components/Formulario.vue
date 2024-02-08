@@ -7,6 +7,15 @@ const alerta = reactive({
     mensaje:''
 })
 
+defineEmits(['update:nombre'])
+
+const props = defineProps({
+    nombre:{
+        type: String,
+        required:true
+    }
+})
+
 
 const validar= e=>{
     if(Object.values(paciente).includes('')){
@@ -45,6 +54,7 @@ const validar= e=>{
                 type="text"
                 placeholder="Nombre de la Mascota"
                 class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
+                @input="$emit('update:nombre',$event.target.value)"
                
             />
              </div>
