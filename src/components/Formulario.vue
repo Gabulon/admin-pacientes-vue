@@ -7,13 +7,7 @@ const alerta = reactive({
     mensaje:''
 })
 
-const paciente = reactive({
-    nombre:'',
-    propietario:'',
-    email:'',
-    alta:'',
-    sintomas:''
-})
+
 const validar= e=>{
     if(Object.values(paciente).includes('')){
         alerta.mensaje='Todos los campos son obligatorios'
@@ -51,7 +45,7 @@ const validar= e=>{
                 type="text"
                 placeholder="Nombre de la Mascota"
                 class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                v-model="paciente.nombre"
+               
             />
              </div>
              <div class="mb-5">
@@ -65,7 +59,7 @@ const validar= e=>{
                   type="text"
                   placeholder="Nombre del propietario"
                   class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                  v-model="paciente.propietario"
+                  
               />
                </div>
                <div class="mb-5">
@@ -79,7 +73,7 @@ const validar= e=>{
                   type="email"
                   placeholder="Email del propietario"
                   class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                  v-model="paciente.email"
+                  
               />
                </div>
                <div class="mb-5">
@@ -92,7 +86,7 @@ const validar= e=>{
                   id="emaialtal"
                   type="date"
                   class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md"
-                  v-model="paciente.alta"
+                  
               />
                </div>
                <div class="mb-5">
@@ -105,7 +99,7 @@ const validar= e=>{
                   id="sintomas"
                   placeholder="Describe los sintomas"
                   class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md h-48"
-                  v-model="paciente.sintomas"
+                  
               />
                </div>
                <input
