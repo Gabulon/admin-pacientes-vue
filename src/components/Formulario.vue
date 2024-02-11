@@ -130,7 +130,7 @@ const validar= e=>{
                   id="sintomas"
                   placeholder="Describe los sintomas"
                   class="border-2 w-full p-2 mt-2 placeholder-gray-400 rounded-md h-48"
-                  :value="nombre"
+                  :value="sintomas"
                   @input="$emit('update:sintomas',$event.target.value)"
                   
               />
