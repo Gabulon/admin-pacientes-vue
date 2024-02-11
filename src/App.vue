@@ -13,7 +13,15 @@ const paciente = reactive({
     sintomas:''
 })
 const guardarPaciente = () =>{
-  pacientes.value.push(paciente)
+  pacientes.value.push({
+    ...paciente
+  })
+  
+  paciente.nombre=''
+  paciente.propietario=''
+  paciente.email=''
+  paciente.alta=''
+  paciente.sintomas=''
 }
 </script>
 
