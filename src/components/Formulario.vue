@@ -7,7 +7,7 @@ const alerta = reactive({
     mensaje:''
 })
 
-defineEmits(['update:nombre', 'update:propietario','update:email','update:alta','update:sintomas'])
+const emit=defineEmits(['update:nombre', 'update:propietario','update:email','update:alta','update:sintomas','guardar-paciente'])
 
 const props = defineProps({
     nombre:{
@@ -40,7 +40,7 @@ const validar= e=>{
         return
     }
  
-    console.log('Validando....')
+    emit('guardar-paciente')
 }
 </script>
 
