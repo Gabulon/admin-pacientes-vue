@@ -15,16 +15,26 @@ const paciente = reactive({
     sintomas:''
 })
 const guardarPaciente = () =>{
-  pacientes.value.push({
+  if(paciente.id){
+    const {id} = paciente
+    const i = pacientes.value.findIndex((pacienteState) => pacienteState.id === id)
+    pacientes.value[i]={...paciente}
+  }else{
+    pacientes.value.push({
     ...paciente,
     id:uid()
   })
-  
-  paciente.nombre=''
-  paciente.propietario=''
-  paciente.email=''
-  paciente.alta=''
-  paciente.sintomas=''
+  }
+
+  Object.assign(paciente,{
+    nombre:'',
+    propietario:'',
+    email:'',
+    alta:'',
+    sintomas:'',
+    id:null
+  })
+
 }
 
   const actualizarPaciente = (id)=>{
