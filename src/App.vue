@@ -26,6 +26,10 @@ const guardarPaciente = () =>{
   paciente.alta=''
   paciente.sintomas=''
 }
+
+  const actualizarPaciente = (id)=>{
+    
+  }
 </script>
 
 <template>
@@ -50,6 +54,7 @@ const guardarPaciente = () =>{
             <Paciente
               v-for="paciente in pacientes"
                 :paciente="paciente"
+                @actualizar-paciente="actualizarPaciente"
             />
 
           </div>
